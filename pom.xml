@@ -33,7 +33,7 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
       <version>${springboot.version}</version>
     </dependency>
     <dependency>
@@ -52,7 +52,7 @@
     <dependency>
       <groupId>com.liumapp</groupId>
       <artifactId>DNSQueen</artifactId>
-      <version>1.2.0</version>
+      <version>1.2.5</version>
     </dependency>
     <dependency>
       <groupId>com.liumapp.pattern</groupId>

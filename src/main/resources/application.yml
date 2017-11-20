@@ -10,6 +10,13 @@ mybatis:
   mapper-locations: classpath*:mappers/*Mapper.xml
 
 server:
-  port: 40214
+  port: 40213
+
+liumapp:
+  certificate:
+    generator:
+      port: 40214
+      startDelay: 3000
+
 
 
