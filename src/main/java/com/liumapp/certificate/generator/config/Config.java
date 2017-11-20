@@ -1,7 +1,8 @@
 package com.liumapp.certificate.generator.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+import com.liumapp.DNSQueen.worker.tcp.TCPSocketMonitor;
 
 /**
  * Created by liumapp on 9/28/17.
@@ -9,9 +10,13 @@ import org.springframework.context.annotation.ImportResource;
  * home-page:http://www.liumapp.com
  */
 @Configuration
-@ImportResource(locations = {"classpath:/spring/applicationContext*.xml"})
 public class Config {
 
-
+    @Bean
+    public TCPSocketMonitor tcpSocketMonitor () {
+        Integer port = 40214;
+        TCPSocketMonitor tcpSocketMonitor = new TCPSocketMonitor(port);
+        return tcpSocketMonitor;
+    }
 
 }

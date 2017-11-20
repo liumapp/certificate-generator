@@ -1,5 +1,5 @@
 # SpringBootMavenArchetype
-this is a maven archetype , which will built a java program based on springboot
+this is a maven archetype , which will built a java program based on springboot (under developing , plz don't use right now)
 
 ### how to use it 
 
