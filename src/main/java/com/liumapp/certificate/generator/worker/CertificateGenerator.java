@@ -2,6 +2,7 @@ package com.liumapp.certificate.generator.worker;
 
 import com.liumapp.DNSQueen.worker.ready.StandReadyWorker;
 import com.liumapp.pattern.certificate.PersonalPattern;
+import com.liumapp.pattern.exception.PatternPropertiesNumberNotEnough;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,8 +15,13 @@ public class CertificateGenerator extends StandReadyWorker {
 
     @Override
     public String doWhatYouShouldDo(String s) {
-        PersonalPattern personalPattern = PersonalPattern.parse(s);
-        return null;
+        try {
+            PersonalPattern personalPattern = PersonalPattern.parse(s);
+        } catch (PatternPropertiesNumberNotEnough e) {
+            e.printStackTrace();
+            return null;
+        }
+        return "success";
     }
 
 }
