@@ -10,5 +10,5 @@
 
 * delete your certificate from specified KeyStore.
 
-* get your certificate from specified KeyStore with your alias.
+* get your certificate from specified KeyStore with your alias , you can export it to anywhere you like.
 

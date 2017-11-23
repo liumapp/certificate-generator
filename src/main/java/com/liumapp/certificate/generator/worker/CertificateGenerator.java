@@ -19,7 +19,7 @@ public class CertificateGenerator extends StandReadyWorker {
         try {
             PersonalPattern personalPattern = PersonalPattern.parse(s);
             return "success";
-        } catch (PatternPropertiesNumberNotEnough e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
