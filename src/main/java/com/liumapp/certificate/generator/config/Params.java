@@ -12,7 +12,7 @@ public class Params {
 
     private Integer port = 9999;
 
-    private String password = "adminadmin";
+    private String generatorPd = "adminadmin";
 
     private String messageDigestType = "MD5";
 
@@ -36,12 +36,12 @@ public class Params {
         this.port = port;
     }
 
-    public String getPassword() {
-        return password;
+    public String getGeneratorPd() {
+        return generatorPd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setGeneratorPd(String generatorPd) {
+        this.generatorPd = generatorPd;
     }
 
     public String getMessageDigestType() {
