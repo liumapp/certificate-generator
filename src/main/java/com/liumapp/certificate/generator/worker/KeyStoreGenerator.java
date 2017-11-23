@@ -2,7 +2,6 @@ package com.liumapp.certificate.generator.worker;
 
 import com.liumapp.DNSQueen.worker.ready.StandReadyWorker;
 import com.liumapp.certificate.generator.config.Params;
-import com.liumapp.certificate.generator.security.PasswordNeeded;
 import com.liumapp.certificate.generator.securityImpl.PasswordNeededChk;
 import com.liumapp.keystore.service.KeyTools;
 import com.liumapp.pattern.keystore.KeyStorePattern;
@@ -10,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.FileOutputStream;
-import java.security.Key;
 import java.time.temporal.ChronoUnit;
 
 /**
+ * KeyStore的生成
  * Created by liumapp on 11/21/17.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
@@ -34,7 +33,7 @@ class KeyStoreGenerator extends StandReadyWorker {
             if (!passwordNeededChk.chkPassword(keyStorePattern)) {
                 return null;
             }
-            String fileName = keyStorePattern.getSavePath() + "/" + keyStorePattern.getKeyStoreName();
+            String fileName = params.getKeyStoreSavePath() + "/" + keyStorePattern.getKeyStoreName();
             FileOutputStream out = new FileOutputStream(fileName);
             KeyTools.newKeyStore(keyStorePattern.getKeyStorePd())
                     .newKeyPair()
@@ -50,11 +49,11 @@ class KeyStoreGenerator extends StandReadyWorker {
                     .createInKeyStore(keyStorePattern.getFcAlias() , keyStorePattern.getFcPassword())
                     .writeTo(out);
             out.close();
+            return "success";
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
-        return null;
     }
 
 }
