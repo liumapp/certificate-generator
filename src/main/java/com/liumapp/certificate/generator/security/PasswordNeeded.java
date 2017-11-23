@@ -1,6 +1,6 @@
 package com.liumapp.certificate.generator.security;
 
-import com.liumapp.pattern.keystore.KeyStorePattern;
+import com.liumapp.pattern.SocketPattern;
 
 /**
  * Created by liumapp on 11/21/17.
@@ -11,10 +11,10 @@ public interface PasswordNeeded {
 
     /**
      *
-     * @param keyStorePattern
+     * @param socketPattern
      * @return boolean true : password success
      */
-    public boolean chkPassword (KeyStorePattern keyStorePattern) ;
+    public boolean chkPassword (SocketPattern socketPattern) ;
 
 
 }
