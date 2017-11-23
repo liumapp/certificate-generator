@@ -25,8 +25,14 @@ public class PasswordNeededChk implements PasswordNeeded {
     public boolean chkPassword(KeyStorePattern keyStorePattern) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance(params.getMessageDigestType());
         BASE64Encoder base64Encoder = new BASE64Encoder();
-        
+
         return false;
     }
+
+    @Override
+    public String encodePassword(String password) {
+        return null;
+    }
+
 
 }

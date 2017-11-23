@@ -13,10 +13,17 @@ import java.security.NoSuchAlgorithmException;
 public interface PasswordNeeded {
 
     /**
-     *
+     * 校验密码
      * @param keyStorePattern
      * @return boolean true : password success
      */
     public boolean chkPassword (KeyStorePattern keyStorePattern) throws NoSuchAlgorithmException;
+
+    /**
+     * 加密密码
+     * @param password
+     * @return string after encode
+     */
+    public String encodePassword (String password);
 
 }
