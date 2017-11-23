@@ -4,11 +4,14 @@ import com.liumapp.DNSQueen.worker.ready.StandReadyWorker;
 import com.liumapp.certificate.generator.config.Params;
 import com.liumapp.certificate.generator.security.PasswordNeeded;
 import com.liumapp.certificate.generator.securityImpl.PasswordNeededChk;
+import com.liumapp.keystore.service.KeyTools;
 import com.liumapp.pattern.keystore.KeyStorePattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.FileOutputStream;
 import java.security.Key;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Created by liumapp on 11/21/17.
@@ -31,6 +34,22 @@ class KeyStoreGenerator extends StandReadyWorker {
             if (!passwordNeededChk.chkPassword(keyStorePattern)) {
                 return null;
             }
+            String fileName = keyStorePattern.getSavePath() + "/" + keyStorePattern.getKeyStoreName();
+            FileOutputStream out = new FileOutputStream(fileName);
+            KeyTools.newKeyStore(keyStorePattern.getKeyStorePd())
+                    .newKeyPair()
+                    .keyLength(keyStorePattern.getKeyLength())
+                    .generateWithCertificate()
+                    .withValidity(1 , ChronoUnit.YEARS)
+                    .withDistinguishName()
+                    .commonName(keyStorePattern.getFcName())
+                    .state(keyStorePattern.getFcCity())
+                    .locality(keyStorePattern.getFcProvince())
+                    .country(keyStorePattern.getFcCountry())
+                    .build()
+                    .createInKeyStore(keyStorePattern.getFcAlias() , keyStorePattern.getFcPassword())
+                    .writeTo(out);
+            out.close();
         } catch (Exception e) {
             e.printStackTrace();
             return null;

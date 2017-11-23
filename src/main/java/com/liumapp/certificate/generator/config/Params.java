@@ -20,6 +20,8 @@ public class Params {
 
     private Integer startDelay = 3000;
 
+    private String keyStoreSavePath = "/usr/local/tomcat/project/working";
+
     public Integer getStartDelay() {
         return startDelay;
     }
@@ -58,5 +60,13 @@ public class Params {
 
     public void setEncoding(String encoding) {
         this.encoding = encoding;
+    }
+
+    public String getKeyStoreSavePath() {
+        return keyStoreSavePath;
+    }
+
+    public void setKeyStoreSavePath(String keyStoreSavePath) {
+        this.keyStoreSavePath = keyStoreSavePath;
     }
 }

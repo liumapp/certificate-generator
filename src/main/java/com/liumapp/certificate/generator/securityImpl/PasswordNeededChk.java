@@ -34,5 +34,4 @@ public class PasswordNeededChk implements PasswordNeeded {
         return base64Encoder.encode(md.digest(password.getBytes(params.getEncoding())));
     }
 
-
 }
