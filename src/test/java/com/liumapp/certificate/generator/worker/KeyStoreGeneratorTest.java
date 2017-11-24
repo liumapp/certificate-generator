@@ -1,6 +1,7 @@
 package com.liumapp.certificate.generator.worker;
 
 import com.liumapp.DNSQueen.queen.Queen;
+import com.liumapp.pattern.certificate.ExporterPattern;
 import com.liumapp.pattern.keystore.KeyStorePattern;
 import org.junit.Test;
 
@@ -55,7 +56,25 @@ public class KeyStoreGeneratorTest {
     @Test
     public void exportCert () {
         if (true) {
-            
+            Queen queen = new Queen();
+            queen.setPort(40214);
+            try {
+                queen.connect();
+                ExporterPattern exporterPattern = new ExporterPattern();
+                exporterPattern.setImportant("keystore.ks",
+                        "adminadmin",
+                        "430388229353192",
+                        "123",
+                        ".",
+                        "430388229353192.cer");
+                if (exporterPattern.chk()) {
+                    String line = exporterPattern.getEncoding();
+                    queen.say(line);
+                    System.out.println(queen.hear());
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
