@@ -24,7 +24,7 @@ public class PasswordNeededChk implements PasswordNeeded {
 
     @Override
     public boolean chkPassword(KeyStorePattern keyStorePattern) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        return encodePassword(params.getGeneratorPd()).equals(keyStorePattern.getGeneratorPd());
+        return encodePassword(params.getGeneratorPd()).equals(encodePassword(keyStorePattern.getGeneratorPd()));
     }
 
     @Override

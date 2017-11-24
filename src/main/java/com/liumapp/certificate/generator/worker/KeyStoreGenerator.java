@@ -31,7 +31,7 @@ class KeyStoreGenerator extends StandReadyWorker {
         try {
             KeyStorePattern keyStorePattern = KeyStorePattern.parse(whatQueenSays);
             if (!passwordNeededChk.chkPassword(keyStorePattern)) {
-                return null;
+                return "generator password wrong !";
             }
             String fileName = params.getKeyStoreSavePath() + "/" + keyStorePattern.getKeyStoreName();
             FileOutputStream out = new FileOutputStream(fileName);
