@@ -23,7 +23,7 @@ public class CertificateExporter extends StandReadyWorker {
 
     @Autowired
     private Params params;
-
+    
     @Override
     public String doWhatYouShouldDo(String whatQueenSays) {
         try {
