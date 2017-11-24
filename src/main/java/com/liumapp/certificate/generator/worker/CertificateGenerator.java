@@ -35,10 +35,10 @@ public class CertificateGenerator extends StandReadyWorker {
                            .generateWithCertificate()
                            .withValidity(1 , ChronoUnit.YEARS)
                            .withDistinguishName()
-                           .commonName(personalPattern.getName())
-                           .state(personalPattern.getCity())
-                           .locality(personalPattern.getProvince())
-                           .country(personalPattern.getCountry())
+                               .commonName(personalPattern.getName())
+                               .state(personalPattern.getCity())
+                               .locality(personalPattern.getProvince())
+                               .country(personalPattern.getCountry())
                            .build()
                            .createInKeyStore(personalPattern.getAlias() , personalPattern.getCertPassword());
             FileOutputStream out = new FileOutputStream(params.getKeyStoreSavePath() + "/" + personalPattern.getKeystore());
