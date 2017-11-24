@@ -10,7 +10,7 @@
 
   <groupId>com.liumapp.certificate</groupId>
   <artifactId>certificate-generator</artifactId>
-  <version>v1.0.0-SNAPSHOT</version>
+  <version>v1.0.0</version>
   <packaging>jar</packaging>
 
   <properties>
@@ -145,9 +145,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:https://github.com/liumapp/keystore-manager.git</connection>
-    <developerConnection>scm:git:https://github.com/liumapp/keystore-manager.git</developerConnection>
-    <url>https://github.com/liumapp/keystore-manager</url>
+    <connection>scm:git:https://github.com/liumapp/certificate-generator.git</connection>
+    <developerConnection>scm:git:https://github.com/liumapp/certificate-generator.git</developerConnection>
+    <url>https://github.com/liumapp/certificate-generator</url>
     <tag>${project.version}</tag>
   </scm>
 
