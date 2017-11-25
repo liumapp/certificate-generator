@@ -2,6 +2,7 @@ package com.liumapp.certificate.generator.worker;
 
 import com.liumapp.DNSQueen.queen.Queen;
 import com.liumapp.pattern.certificate.ExporterPattern;
+import com.liumapp.pattern.certificate.PersonalPattern;
 import com.liumapp.pattern.keystore.KeyStorePattern;
 import org.junit.Test;
 
@@ -55,23 +56,57 @@ public class KeyStoreGeneratorTest {
      */
     @Test
     public void exportCert () {
-        if (true) {
+        if (false) {
             Queen queen = new Queen();
             queen.setPort(40214);
             try {
                 queen.connect();
                 ExporterPattern exporterPattern = new ExporterPattern();
                 exporterPattern.setImportant("keystore.ks",
-                        "adminadmin",
+                        "123456",
                         "430388229353192",
                         "123",
-                        ".",
+                        "/usr/local/tomcat/project/working",
                         "430388229353192.cer");
                 if (exporterPattern.chk()) {
                     String line = exporterPattern.getEncoding();
                     queen.say(line);
                     System.out.println(queen.hear());
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 往指定的keystore中添加新的证书
+     */
+    @Test
+    public void addNewCert () {
+        if (false) {
+            Queen queen = new Queen();
+            queen.setPort(40214);
+            try {
+                queen.connect();
+                PersonalPattern personalPattern = new PersonalPattern();
+                personalPattern.setImportant("keystore.ks",
+                        "123456",
+                        "49999999999",
+                        "123",
+                        "lisi",
+                        "49999999999",
+                        "男",
+                        "中国",
+                        "浙江",
+                        "杭州");
+                if (personalPattern.chk()) {
+                    String line = personalPattern.getEncoding();
+                    queen.say(line);
+                    System.out.println(queen.hear());
+                }
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
