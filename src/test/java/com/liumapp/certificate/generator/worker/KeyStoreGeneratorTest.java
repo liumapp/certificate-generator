@@ -25,6 +25,7 @@ public class KeyStoreGeneratorTest {
         if (false) {
             Queen queen = new Queen();
             queen.setPort(40214);
+            queen.setAddress("sign.huluwa.cc");
             try {
                 queen.connect();
                 KeyStorePattern keyStorePattern = new KeyStorePattern();
@@ -66,7 +67,7 @@ public class KeyStoreGeneratorTest {
                         "123456",
                         "49999999999",
                         "123",
-                        "/usr/local/tomcat/project/working",
+                        "/usr/local/certificateGenerator/certificate",
                         "430388229353192.cer");
                 if (exporterPattern.chk()) {
                     String line = exporterPattern.getEncoding();
