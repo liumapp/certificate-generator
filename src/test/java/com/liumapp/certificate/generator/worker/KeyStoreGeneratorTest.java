@@ -56,7 +56,7 @@ public class KeyStoreGeneratorTest {
      */
     @Test
     public void exportCert () {
-        if (true) {
+        if (false) {
             Queen queen = new Queen();
             queen.setPort(40214);
             try {
