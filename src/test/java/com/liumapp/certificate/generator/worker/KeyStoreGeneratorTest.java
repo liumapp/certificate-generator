@@ -32,7 +32,7 @@ public class KeyStoreGeneratorTest {
                         "adminadmin",
                         "123456",
                         2048,
-                        "zhangsan",
+                        "王五",
                         "浙江",
                         "杭州",
                         "中国",
@@ -56,7 +56,7 @@ public class KeyStoreGeneratorTest {
      */
     @Test
     public void exportCert () {
-        if (false) {
+        if (true) {
             Queen queen = new Queen();
             queen.setPort(40214);
             try {
@@ -64,7 +64,7 @@ public class KeyStoreGeneratorTest {
                 ExporterPattern exporterPattern = new ExporterPattern();
                 exporterPattern.setImportant("keystore.ks",
                         "123456",
-                        "430388229353192",
+                        "49999999999",
                         "123",
                         "/usr/local/tomcat/project/working",
                         "430388229353192.cer");
