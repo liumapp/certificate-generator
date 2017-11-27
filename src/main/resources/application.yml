@@ -17,6 +17,7 @@ liumapp:
     generator:
       port: 40214
       startDelay: 3000
+      keyStoreSavePath: /usr/local/certificateGenerator/keystore
 
 
 
