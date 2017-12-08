@@ -4,9 +4,11 @@ import com.liumapp.DNSQueen.queen.Queen;
 import com.liumapp.pattern.certificate.ExporterPattern;
 import com.liumapp.pattern.certificate.PersonalPattern;
 import com.liumapp.pattern.keystore.KeyStorePattern;
+import com.liumapp.pattern.sign.SignatureAreaPattern;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.UnknownHostException;
 
 /**
@@ -25,7 +27,6 @@ public class KeyStoreGeneratorTest {
         if (false) {
             Queen queen = new Queen();
             queen.setPort(40214);
-            queen.setAddress("sign.huluwa.cc");
             try {
                 queen.connect();
                 KeyStorePattern keyStorePattern = new KeyStorePattern();

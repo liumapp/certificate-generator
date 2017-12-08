@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.FileOutputStream;
+import java.security.PrivateKey;
 import java.security.cert.Certificate;
 
 /**
